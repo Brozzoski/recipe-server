@@ -19,8 +19,8 @@ router.get('/', validateSession, (req, res) => {
 router.post('/new', validateSession, (req, res) => {
   const newList = {
 
-      name: req.body.name,
-      items: req.body.items,
+      name: req.body.list.name,
+      items: req.body.list.items,
     
   }
 

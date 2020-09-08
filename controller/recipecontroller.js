@@ -20,11 +20,11 @@ router.get('/', validateSession, Recipe, (req, res) => {ru
 router.post('/new', validateSession, (req, res) => {
     const newRecipe = {
 
-        name: req.body.name,
-        temp: req.body.temp,
-        time: req.body.time, 
-        ingredients: req.user.ingredients,
-        instruction: req.user.instruction
+        name: req.body.recipe.name,
+        temp: req.body.recipe.temp,
+        time: req.body.recipe.time, 
+        ingredients: req.user.recipe.ingredients,
+        instruction: req.user.recipe.instruction
 
     }
 
