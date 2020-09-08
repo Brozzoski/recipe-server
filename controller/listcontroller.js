@@ -26,7 +26,7 @@ router.post('/new', validateSession, (req, res) => {
 
   List.create(newList)
       .then(list => res.status(200).json( list ))
-      .catch(err => res.status(500).json({ error: err }))    
+      .catch(err => res.status(510).json({ error: err }))    
 })
 
 //! GET by Name
