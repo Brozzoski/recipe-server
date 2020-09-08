@@ -5,9 +5,9 @@ let bcrypt = require("bcryptjs");
 const express = require("express");
 const app = express();
 //! CONTROLLERS
-const collection = require("./controllers/collectioncontroller");
-const post = require("./controllers/postcontroller");
-const user = require("./controllers/userscontroller");
+const collection = require("./controller/collectioncontroller");
+const post = require("./controller/postcontroller");
+const user = require("./controller/userscontroller");
 //! DATABASE
 const sequelize = require("./db");
 sequelize.sync();
