@@ -23,6 +23,6 @@ app.use('/recipe', recipe)
 app.use('/list', list)
 app.use('/user', user)
 
-app.listen(process.env.PORT, function () {
+app.listen(process.env.PORT, function ( ) {
   console.log(`******App is listening on ${process.env.PORT}********`);
-};
+ ) } 
