@@ -15,7 +15,7 @@ user = sequelize.import('./models/user');
 user.hasMany(recipe);
 recipe.belongsTo(user);
 
-user.hasMany(lists);
-lists.belongsTo(user);
+user.hasMany(list);
+list.belongsTo(user);
 
 module.exports = sequelize
