@@ -5,8 +5,8 @@ let bcrypt = require("bcryptjs");
 const express = require("express");
 const app = express();
 //! CONTROLLERS
-const collection = require("./controller/collectioncontroller");
-const post = require("./controller/postcontroller");
+const list = require("./controller/listcontroller");
+const recipe = require("./controller/recipecontroller");
 const user = require("./controller/userscontroller");
 //! DATABASE
 const sequelize = require("./db");
