@@ -7,7 +7,7 @@ const app = express();
 //! CONTROLLERS
 const list = require("./controller/listcontroller");
 const recipe = require("./controller/recipecontroller");
-const user = require("./controller/userscontroller");
+const user = require("./controller/usercontroller");
 //! DATABASE
 const sequelize = require("./db");
 sequelize.sync();
