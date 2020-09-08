@@ -23,8 +23,8 @@ router.post('/new', validateSession, (req, res) => {
         name: req.body.recipe.name,
         temp: req.body.recipe.temp,
         time: req.body.recipe.time, 
-        ingredients: req.user.recipe.ingredients,
-        instruction: req.user.recipe.instruction
+        ingredients: req.body.recipe.ingredients,
+        instruction: req.body.recipe.instruction
 
     }
 

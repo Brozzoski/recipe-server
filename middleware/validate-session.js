@@ -11,7 +11,7 @@ const validateSession = (req, res, next) => {
             if(!err && decodeToken) {
                 User.findOne({
                     where: {
-                        id: decoded.id
+                        id: decodeToken.id
                     }
                 }, console.log(decodeToken))
                 .then(user => {
