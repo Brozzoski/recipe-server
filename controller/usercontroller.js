@@ -29,10 +29,10 @@ router.post('/signup', (req, res) => {
   });
   
   //User Login
-  router.post("/signup", function (req, res) {
+  router.post("/login", function (req, res) {
     User.findOne({
       where: {
-        userName: req.body.user.userNname
+        email: req.body.user.email
       },
     })
       .then(function loginSuccess(user) {
