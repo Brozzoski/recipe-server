@@ -4,8 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     const List = sequelize.define('list', {
 
         name: {
-            type: DataTypes.STRING,
-            allowNull: false,
+            type: DataTypes.STRING
         },
         items: {
             type: DataTypes.STRING,

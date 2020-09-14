@@ -10,7 +10,7 @@ router.get('/practice', function(req, res)
 })
 
 //! GET ALL RECIPE
-router.get('/', validateSession, Recipe, (req, res) => {ru
+router.get('/', validateSession, (req, res) => {
     Recipe.findAll()
         .then(recipe => res.status(200).json(recipe))
         .catch(err => res.status(500).json({ error: err }))
@@ -20,11 +20,11 @@ router.get('/', validateSession, Recipe, (req, res) => {ru
 router.post('/new', validateSession, (req, res) => {
     const newRecipe = {
 
-        name: req.body.recipe.name,
-        temp: req.body.recipe.temp,
-        time: req.body.recipe.time, 
-        ingredients: req.body.recipe.ingredients,
-        instruction: req.body.recipe.instruction
+        name: req.body.name,
+        temp: req.body.temp,
+        time: req.body.time, 
+        ingredients: req.body.ingredients,
+        instruction: req.body.instruction
 
     }
 
@@ -35,21 +35,28 @@ router.post('/new', validateSession, (req, res) => {
 
 //! GET by Name
 router.get('/:name', validateSession, (req, res) => {  
-    recipe.findOne({ where: { titleOfRecipe: req.params.name }})  
+    Recipe.findOne({ where: { titleOfRecipe: req.params.name }})  
       .then(recipe => res.status(200).json(recipe))
       .catch(err => res.status(500).json({ error: err }))
+  })
+
+  //Get by ID
+  router.get('/:id',validateSession, (req, res) => {
+    Recipe.findOne(req.body, { where: { id: req.params.id }})  
+      .then(recipe => res.status(200).json(recipe))
+      .catch(err => res.status(500).json({error: err})) 
   })
   
 //! UPDATE by ID
 router.put('/:id',validateSession, (req, res) => {
-    recipe.update(req.body, { where: { id: req.params.id }})  
+    Recipe.update(req.body, { where: { id: req.params.id }})  
       .then(recipe => res.status(200).json(recipe))
       .catch(err => res.status(500).json({error: err})) 
   })
 
 //! DELETE
 router.delete('/:id', validateSession, (req, res) => {
-    recipe.destroy({
+    Recipe.destroy({
         where: { id: req.params.id }
     })
     .then(recipe => res.status(200).json(recipe))

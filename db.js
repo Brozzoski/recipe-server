@@ -12,10 +12,10 @@ recipe = sequelize.import('./models/recipe')
 list = sequelize.import('./models/list')
 user = sequelize.import('./models/user')
 
-user.hasMany(recipe)
-recipe.belongsTo(user)
+// user.hasMany(recipe)
+// recipe.belongsTo(user)
 
-user.hasMany(list)
-list.belongsTo(user)
+// user.hasMany(list)
+// list.belongsTo(user)
 
 module.exports = sequelize

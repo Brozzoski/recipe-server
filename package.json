@@ -1,4 +1,5 @@
 {
+  "proxy": "https://cat-fact.herokuapp.com/",
   "name": "recipe-server",
   "version": "1.0.0",
   "description": "Recipe",
